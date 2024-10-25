@@ -22,7 +22,7 @@ var statechanger = StateChanger.new(
 	),
 
 	// the 'funcs' argument also takes an Event, containing keys associated with functions that
-	// will be evaluated when calling the .iterate-method(nStates)-method on the StateChanger-object.
+	// will be evaluated when calling the .iterate(nStates)-method on the StateChanger-object.
 	// These functions are passed the .cell and the .data of the StateChanger-object internally in the class
 	// and have to be included in all declared functions as |cellAlias,dataAlias| for iteration to work
 	funcs: (
@@ -55,8 +55,8 @@ var statechanger = StateChanger.new(
 // applying the ruleset declared above on each iteration,
 statechanger.iterate(20);
 
-// using the .flatmemory-method to collect the flattened data from the \note-key in the cell
-// .statememory can also be used to get an Array containing the data from all previous states
+// using the .flatmemory-method to collect the flattened data from the \note-key in the cell.
+// .statememory can also be used to get an Array containing all previous states in the cell
 notes = statechanger.flatmemory(\notes).collect{|note|note};
 
 // plotting to look at the pattern the StateChanger made; which is in this example quite basic
